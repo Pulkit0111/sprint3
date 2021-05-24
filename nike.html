@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 100%;
+            height: 600px;
+            display: flex;
+        }
+        .form{
+            width: 20%;
+            height: 100%;
+            border: 1px solid black;
+        }
+        .input{
+            padding: 3%;
+            margin: 8%;
+        }
+        .productBox{
+            width: 75%;
+            height: 600px;
+            border: 1px solid black;
+        }
+        .nike{
+            width: 100%;
+            display: flex;
+        }
+        .shoe{
+            width: 200px;
+            height: 250px;
+            margin-left: 10%;
+            margin-top: 2.5%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        #inputButton{
+            background-color: white;
+            border: 1px solid black;
+            color: cyan;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div class="form">
+        <form>
+            <input class="input" type="text" placeholder="Name" id="name">
+            <input class="input" type="number" placeholder="Price" id="price">
+            <input class="input" type="text" placeholder="Description" id="des">
+            <input class="input" type="number" placeholder="Est. Delivery (Days)" id="del">
+            <button class="input" id="inputButton">Add Product</button>
+        </form>
+    </div>
+    <div class="productBox">
+        <div class="nike">
+            <div class="shoe" id="shoe1">
+                <button class="button">Remove</button>
+                <button class="button">Update</button>
+            </div>
+            <div class="shoe" id="shoe2">
+                <button class="button">Remove</button>
+                <button class="button">Update</button>
+            </div>
+            <div class="shoe" id="shoe3">
+                <button class="button">Remove</button>
+                <button class="button">Update</button>
+            </div>
+        </div>
+        <div class="nike">
+            <div class="shoe" id="shoe1">
+                <button class="button">Remove</button>
+                <button class="button">Update</button>
+            </div>
+            <div class="shoe" id="shoe2">
+                <button class="button">Remove</button>
+                <button class="button">Update</button>
+            </div>
+            <div class="shoe" id="shoe3">
+                <button class="button">Remove</button>
+                <button class="button">Update</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function add(){
+        var name = document.getElementById("name").value;
+        var price = document.getElementById("price").value;
+        var des = document.getElementById("des").value;
+        var del = document.getElementById("del").value;
+        var s = document.getElementById("shoe1");
+        var p1=document.createElement('p');
+        p1.innerHTML=`Name: ${name}`;
+        s.append(p1);
+        var p2 = document.createElement('p');
+        p2.innerHTML = `Price: ${price}`;
+        s.append(p2);
+        var p3 = document.createElement('p');
+        p3.innerHTML = `Description: ${des}`;
+        s.append(p3);
+        var p4 = document.createElement('p');
+        p4.innerHTML = `Delivery: ${del}`;
+        s.append(p4);
+    }
+    var inputbtn = document.getElementById("inputButton");
+    inputbtn.addEventListener('click' , add);
+</script>
